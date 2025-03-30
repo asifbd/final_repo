@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from 
 
 def plot_metrics_for_task(history, task, show_metrics=['f1', 'precision', 'recall', 'accuracy'], show_losses=False):
 	# Extract metrics for the specified task
