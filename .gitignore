@@ -1,5 +1,5 @@
 data/raw_images/
-data/model_weights/
+data/model_weights/*.pt
 data/other_temp_files/
 data/cloth_dataset/images/
 
