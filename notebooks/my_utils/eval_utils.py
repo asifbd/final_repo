@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 
 def get_classwise_metric(classwise_metrics, task_name, metric_name):
 	"""Returns a dictionary of class labels and corresponding metric value."""
@@ -37,3 +38,29 @@ def load_task_metrics_for_test(metrics_path):
 	#test_loss, test_metrics = metrics['test_loss'], metrics['test_metrics']
 	
 	return parse_task_metrics_from_test(metrics['test_metrics'])
+
+def compare_task_with_baseline(baseline_metrics, model_metrics, metrics=['accuracy', 'f1', 'precision', 'recall'], baseline_model_name ='ResNet18', new_model_name='??'):
+	baseline_perf = pd.DataFrame.from_dict(baseline_metrics, orient='index').T
+	model_perf = pd.DataFrame.from_dict(model_metrics, orient='index').T
+
+	rows = []
+
+	for metric in metrics:
+		for task in baseline_perf.T.index:
+			baseline_value = baseline_perf[task][metric]
+			model_value = model_perf[task][metric]
+			delta = model_value - baseline_value
+
+			row = {
+				'Metric': metric,
+				'Task': task,
+				f'Baseline ({baseline_model_name})': round(baseline_value, 2),
+				f'{new_model_name}': round(model_value, 2),
+				'Delta': round(delta, 2)
+			}
+
+			rows.append(row)
+
+	comparison_df = pd.DataFrame(rows)
+
+	return comparison_df
