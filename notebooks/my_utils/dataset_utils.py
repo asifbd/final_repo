@@ -51,6 +51,14 @@ def remove_labels(current_labels, labels_to_remove):
 		print(f"Error when removing {labels_to_remove} from {current_labels}: {e}")
 		raise e
 
+def get_all_labels(column, sep=',', allow_empty=False):
+	# Split and flatten all labels
+	all_labels = column.dropna().str.split(sep).sum()
+
+	if not allow_empty:
+		all_labels = [label for label in all_labels if label.strip() != '']
+		
+	return set(all_labels)
 
 def remove_rare_labels(column, min_samples_threshold):
 	"""
