@@ -75,9 +75,14 @@ Below notebooks were used for various steps in curating the dataset.
 - **training_dataset_review**:
 	This notebook loads the curated dataset from csv file, reviews the features, and does some cleanup to prepare for model training such as removing rare feature labels etc. Then it plots some visualization to look at some of the samples, class distribution for different features etc.
 
-- **training_mtl_resnet**:
-	This notebook is used to train a multi-task learning model using ResNet18 backbone.
+- **training_mtl_resnet_baseline**:
+	This notebook is used to train a multi-task learning model using ResNet18 backbone. This notebook contains the first model training experiment on the final dataset, and establishes a baseline.
 
 - **training_mtl_effnet**:
-	This notebook is used to train a multi-task learning model using EfficientNet backbone. This also introduces some additional techniques on top of what was tried on previous resnet attempt.
+	This notebook is used to exiermient with Efficient Net backbone, specifically- Efficient Net B0.
 
+- **training_mtl_effnet_b4**:
+	This notebook is used to expand the previous experiment with Efficient Net B4.
+
+- **training_mtl_resnet_50**:
+	This notebook is used to expand the previous ResNet experiment with ResNet50 backbone.
