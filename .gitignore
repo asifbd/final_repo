@@ -1,4 +1,8 @@
-data/
+data/raw_images/
+data/model_weights/
+data/other_temp_files/
+data/cloth_dataset/images/
+
 __pycache__/
 .env
 notebooks/other/
