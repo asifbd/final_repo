@@ -17,16 +17,16 @@ Below is a slightly more elaborate description of those components, to help the 
 
 ## Scrapper
 
-TODO:: Add details after importing scrapper code into the repo
+Scrapper is a collection of nodejs scripts, which leverage puppeteer to scrape product information from Aarong website. You can run the scrapper using `npm start` command, it will provide an input prompt to start one of the few possible scrapping tasks (download product details, download product images, or download brief product metadata for given sitemap json) 
 
 
 ## Annotator
 
-TODO:: Add details after importing annotator code into the repo
+Annotator is a simple React based web application, available in the `annotator` folder. To run the project, you need to install the dependencies using `npm install`, and then run the project using `npm run dev`. This will start a local server, and you can access the application at `http://localhost:5173`.
 
 ## Database
 
-TODO:: Add some details about the schema
+The database backup is available in this reposiotory, in the `data/db` folder. The database is a MySQL database. The database is used by the annotator as well as the scrapper.
 
 
 ## Notebooks
